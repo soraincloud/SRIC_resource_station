@@ -1,5 +1,5 @@
 <template>
-  <el-card class="main-card">
+  <el-card class="head-main-card">
     <el-card class="home-main-card">
       <el-row>
         <el-col :span="2"></el-col>
@@ -12,7 +12,6 @@
         <el-col :span="8"></el-col>
         <el-col :span="2"></el-col>
       </el-row>
-
     </el-card>
   </el-card>
 </template>
@@ -25,7 +24,7 @@ export default {
 
 <style>
 
-.main-card
+.head-main-card
 {
   margin: 10px auto;
   background: rgba(255,255,255,0.75);
