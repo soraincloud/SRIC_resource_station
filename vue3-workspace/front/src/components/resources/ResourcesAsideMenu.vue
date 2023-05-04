@@ -4,6 +4,10 @@
       <el-icon><Menu /></el-icon>
       <span class="resources-aside-span-style">全部</span>
     </el-menu-item>
+    <el-menu-item index="2">
+      <el-icon><Menu /></el-icon>
+      <span class="resources-aside-span-style">MC shaders</span>
+    </el-menu-item>
   </el-menu>
 </template>
 

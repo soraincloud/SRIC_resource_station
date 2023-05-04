@@ -35,7 +35,7 @@ export default
       resources:
           [
             {
-              cover: 'photon-3.19.png',
+              cover: 'photon-main-3.19.png',
               title: 'photon-main',
               version: '3.19',
               description: '模糊较少，色彩鲜明，体积云效果较强'
