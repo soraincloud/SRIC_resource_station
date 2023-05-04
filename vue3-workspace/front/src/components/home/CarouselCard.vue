@@ -1,5 +1,5 @@
 <template>
-<el-card class="carousel-main-card">
+<el-card class="carousel-main-card" shadow="hover">
     <h1 class="carousel-main-text-style">电波来源</h1>
   <el-carousel :interval="4000" type="card" height="240px">
     <el-carousel-item v-for="item in items" :key="item.id">

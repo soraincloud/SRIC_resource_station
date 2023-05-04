@@ -22,6 +22,15 @@ const routes =
                     {
                         requireAuth: true
                     }
+            },
+            {
+                path: '/resources',
+                name: 'Resources',
+                component: () => import('@/components/resources/ResourceIndex'),
+                meta:
+                    {
+                        requireAuth: true
+                    }
             }
         ]
     }

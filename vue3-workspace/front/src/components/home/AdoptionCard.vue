@@ -1,5 +1,5 @@
 <template>
-  <el-card class="adoption-main-card">
+  <el-card class="adoption-main-card" shadow="hover">
     <h1 class="adoption-main-text-style">技术采用</h1>
     <el-row>
       <el-col :span="2"></el-col>
@@ -26,7 +26,7 @@
           <el-card class="adoption-card-style">
             <el-image :src="ElementLogo"></el-image>
           </el-card>
-          <h3>element ui</h3>
+          <h3>element plus</h3>
         </div>
       </el-col>
       <el-col :span="2"></el-col>
@@ -35,7 +35,8 @@
 </template>
 
 <script>
-export default {
+export default
+{
   name: "AdoptionCard",
   data()
   {

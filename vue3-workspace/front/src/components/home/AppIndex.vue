@@ -1,5 +1,4 @@
 <template>
-
   <el-row>
     <el-col :span="2"></el-col>
     <el-col :span="4">
@@ -18,7 +17,6 @@
     </el-col>
     <el-col :span="2"></el-col>
   </el-row>
-
 </template>
 
 <script>
@@ -28,7 +26,8 @@ import SupportCard from "@/components/home/SupportCard";
 import AdoptionCard from "@/components/home/AdoptionCard";
 import CopyrightCard from "@/components/home/CopyrightCard"
 import AsideCard from "@/components/home/AsideCard";
-export default {
+export default
+{
   name: 'AppIndex',
   components: {MainCard,CarouselCard,SupportCard,AdoptionCard,CopyrightCard,AsideCard}
 }

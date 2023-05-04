@@ -1,5 +1,5 @@
 <template>
-  <el-card class="support-main-card">
+  <el-card class="support-main-card" shadow="hover">
     <h1 class="support-main-text-style">技术支持</h1>
     <el-row>
       <el-col :span="2"></el-col>
@@ -26,7 +26,8 @@
 </template>
 
 <script>
-export default {
+export default
+{
   name: "SupportCard",
   data()
   {

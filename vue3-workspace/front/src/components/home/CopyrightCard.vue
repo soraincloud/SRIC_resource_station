@@ -1,5 +1,5 @@
 <template>
-  <el-card class="copyright-main-card">
+  <el-card class="copyright-main-card" shadow="hover">
     <h3 style="color: white">copyright © soraincloud all rights reserved</h3>
   </el-card>
 </template>

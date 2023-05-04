@@ -1,5 +1,5 @@
 <template>
-  <el-card class="head-main-card">
+  <el-card class="head-main-card" shadow="hover">
     <el-card class="home-main-card">
       <el-row>
         <el-col :span="2"></el-col>

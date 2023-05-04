@@ -26,7 +26,7 @@ export default
       [
         {name: '/index', navItem: '首页'},
         {name: '/note', navItem: '笔记'},
-        {name: '/resource', navItem: '资源'},
+        {name: '/resources', navItem: '资源'},
         {name: '/admin', navItem: '个人中心'}
       ],
       sricLogoUrl : require('@/assets/logo/SRIC-pink.png')
