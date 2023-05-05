@@ -13,12 +13,14 @@ public class ResourcesController
     @Autowired
     ResourcesService resourcesService;
 
+    @CrossOrigin
     @GetMapping("/api/resources")
     public List<Resources> list() throws Exception
     {
         return resourcesService.list();
     }
 
+    @CrossOrigin
     @PostMapping("/api/resources")
     public Resources addOrUpdate(@RequestBody Resources resources) throws Exception
     {
@@ -26,12 +28,14 @@ public class ResourcesController
         return resources;
     }
 
+    @CrossOrigin
     @PostMapping("/api/delete")
     public void delete(@RequestBody Resources resources) throws Exception
     {
         resourcesService.deleteById(resources.getId());
     }
 
+    @CrossOrigin
     @GetMapping("/api/categories/{cid}/resources")
     public List<Resources> listByCateGory(@PathVariable("cid") int cid) throws Exception
     {
