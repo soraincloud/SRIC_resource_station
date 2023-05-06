@@ -24,9 +24,8 @@
     </el-card>
   </el-tooltip>
   <el-affix :offset="64">
-    <el-button>
-      <edit-form @onSubmit="loadResources()" ref="edit"></edit-form>
-    </el-button>
+    <search-bar @onSearch="searchResult" ref="searchBar"></search-bar>
+    <edit-form @onSubmit="loadResources()" ref="edit"></edit-form>
   </el-affix>
 
 </template>
@@ -34,6 +33,9 @@
 <script>
 import { Search,Edit,Delete } from '@element-plus/icons-vue';
 import EditForm from "@/components/resources/EditForm";
+import SearchBar from "@/components/resources/SearchBar";
+import { ElMessage, ElMessageBox } from 'element-plus'
+import { markRaw } from 'vue'
 export default
 {
   name: "Resources",
@@ -43,13 +45,24 @@ export default
       resources: []
     }
   },
-  components: { Search,Edit,Delete,EditForm },
+  components: { Search,Edit,Delete,EditForm,SearchBar },
   mounted:function()
   {
     this.loadResources()
   },
   methods:
       {
+        searchResult()
+        {
+          var _this = this
+          this.$axios.get('/search?keywords=' + this.$refs.searchBar.keywords, {})
+              .then(resp => {
+            if (resp && resp.status === 200)
+            {
+              _this.resources = resp.data
+            }
+          })
+        },
         loadResources()
         {
           var _this = this
@@ -62,11 +75,13 @@ export default
         },
         deleteResources(id)
         {
-          this.$confirm('删除, 是否继续?', '提示', {
-            confirmButtonText: '确定',
-            cancelButtonText: '取消',
-            type: 'warning'
-          }
+          ElMessageBox.confirm('要删除吗？这会让资源消失很久（真的很久）！', '问问',
+              {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'error',
+                icon: markRaw(Delete),
+              }
           ).then(() => {
                 this.$axios.post('/delete', {id: id}).then(resp => {
                   if (resp && resp.status === 200)
@@ -74,11 +89,15 @@ export default
                     this.loadResources()
                   }
                 })
+            ElMessage({
+              type: 'danger',
+              message: '删除成功咧'
+            })
               }
           ).catch(() => {
-            this.$message({
+            ElMessage({
               type: 'info',
-              message: '已取消删除'
+              message: '取消删除啦'
             })
           })
         },

@@ -48,4 +48,20 @@ public class ResourcesController
             return list();
         }
     }
+
+    @CrossOrigin
+    @GetMapping("/api/search")
+    public List<Resources> searchResult(@RequestParam("keywords") String keywords)
+    {
+        // 关键词为空时查询出所有书籍
+        if ("".equals(keywords))
+        {
+            return resourcesService.list();
+        }
+        else
+        {
+            return resourcesService.Search(keywords);
+        }
+    }
+
 }

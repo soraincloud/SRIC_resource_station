@@ -42,4 +42,11 @@ public class ResourcesService
         ResourcesCategory resourcesCategory = categoryService.get(cid);
         return resourcesDAO.findAllByCategory(resourcesCategory);
     }
+
+    //搜索
+    public List<Resources> Search(String keywords)
+    {
+        return resourcesDAO.findAllByTitleLike('%' + keywords + '%');
+    }
+
 }
